@@ -10,7 +10,7 @@ const getMessages = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).json(results.rows)
+      return response.status(200).json(results.rows)
     })
 }
 
@@ -21,7 +21,7 @@ const getMessageById = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).json(results.rows)
+      return response.status(200).json(results.rows)
     })
 }
 
@@ -32,7 +32,7 @@ const getMessagesByUser = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).json(results.rows)
+      return response.status(200).json(results.rows)
     })
 }
 
@@ -43,7 +43,7 @@ const createMessage = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(201).send(`Message added with ID: ${results.rows[0].id}`)
+      return response.status(201).send(`Message added with ID: ${results.rows[0].id}`)
     })
 }
 
@@ -54,7 +54,7 @@ const deleteMessage = (request, response) => {
       if (error) {
         throw error
       }
-      response.status(200).send(`User deleted with ID: ${id}`)
+      return response.status(200).send(`User deleted with ID: ${id}`)
     })
 }
 
@@ -65,19 +65,3 @@ module.exports = {
     createMessage,
     deleteMessage
   }
-
-// const updateUser = (request, response) => {
-//     const id = parseInt(request.params.id)
-//     const { name, email } = request.body
-  
-//     pool.query(
-//       'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-//       [name, email, id],
-//       (error, results) => {
-//         if (error) {
-//           throw error
-//         }
-//         response.status(200).send(`User modified with ID: ${id}`)
-//       }
-//     )
-// }
