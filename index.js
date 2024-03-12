@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const serverless = require('serverless-http');
 
 const db = require('./queries')
 
-const port = 8080;
+// const port = 8080;
 const app = express();
 
 app.use(cors())
@@ -26,6 +27,9 @@ app.get('./messages/:username', db.getMessagesByUser);
 app.post('/messages', db.createMessage);
 app.delete('/messages/:id', db.deleteMessage);
 
-app.listen(port, () => {
-      console.log(`App listening on port ${port}`)
-})
+// app.listen(port, () => {
+//       console.log(`App listening on port ${port}`)
+// })
+
+module.exports = app;
+module.exports.handler = serverless(app);
