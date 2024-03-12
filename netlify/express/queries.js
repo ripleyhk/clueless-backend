@@ -10,7 +10,7 @@ const getMessages = (request, response) => {
       if (error) {
         throw error
       }
-      return response.status(200).json(results.rows)
+      response.status(200).json(results.rows)
     })
 }
 
@@ -21,7 +21,7 @@ const getMessageById = (request, response) => {
       if (error) {
         throw error
       }
-      return response.status(200).json(results.rows)
+      response.status(200).json(results.rows)
     })
 }
 
@@ -32,7 +32,7 @@ const getMessagesByUser = (request, response) => {
       if (error) {
         throw error
       }
-      return response.status(200).json(results.rows)
+      response.status(200).json(results.rows)
     })
 }
 
@@ -43,7 +43,7 @@ const createMessage = (request, response) => {
       if (error) {
         throw error
       }
-      return response.status(201).send(`Message added with ID: ${results.rows[0].id}`)
+      response.status(201).send(`Message added with ID: ${results.rows[0].id}`)
     })
 }
 
@@ -54,7 +54,7 @@ const deleteMessage = (request, response) => {
       if (error) {
         throw error
       }
-      return response.status(200).send(`User deleted with ID: ${id}`)
+      response.status(200).send(`User deleted with ID: ${id}`)
     })
 }
 
