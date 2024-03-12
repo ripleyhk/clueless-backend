@@ -6,8 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:server",
     "start:server": "netlify-lambda serve functions",
-    "start:app": "node server-local.js",
-    "build": "netlify-lambda build functions"
+    "start:app": "node server-local.js"
   },
   "author": "",
   "license": "ISC",

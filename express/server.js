@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const serverless = require('serverless-http');
 
-const db = require('./queries')
+const db = require('./utils/queries')
 const app = express();
 const router = express.Router();
 
