@@ -9,14 +9,6 @@
     "start:app": "node server-local.js",
     "build": "netlify-lambda build functions"
   },
-  "proxy": {
-    "/.netlify/functions": {
-      "target": "http://localhost:8080",
-      "pathRewrite": {
-        "^/\\.netlify/functions": ""
-      }
-    }
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
