@@ -1,6 +1,6 @@
 const Pool = require('pg').Pool;
 
-const connectionString = "postgres://lfcwdsuh:TyZlYE2OKL5BIctun3Cb8CvwEo9_c4Pe@bubble.db.elephantsql.com/lfcwdsuh";
+const connectionString = process.env.CONNECTION_STRING;
 const pool = new Pool({
 connectionString
 });
